@@ -1,0 +1,53 @@
+
+
+import java.security.spec.KeySpec;
+
+import javax.crypto.SecretKey;
+
+/**
+ * The "Key" basically is used to determine how the data is mixed up for encryption
+ * and un-mixed-up for decryption.  You must have the same Key data that was used 
+ * for encryption when it comes time for decryption, or the decryption will fail.
+ * 
+ * @author Erica
+ *
+ */
+public class HomeMadeKey implements KeySpec, SecretKey {
+
+	// I did this because Eclipse told me I should.
+	private static final long serialVersionUID = 3481524322219986049L;
+	
+	// This is the actual data that is used as the key for encryption.
+	private byte[] myKey; 
+	// This is the name of the algorithm that will be used by the Cypher to 
+	// perform the encryption and decryption.
+	private String algorithm;
+	
+	public HomeMadeKey(byte[] myKey, String algorithm) {
+//		this.myKey = myKey;
+		this.myKey = (byte[])myKey.clone();
+		this.algorithm = algorithm;
+	}
+	
+	@Override
+	public String getAlgorithm() {
+		return algorithm;
+	}
+
+	@Override
+	public String getFormat() {
+		// ???? No idea why this is "raw", but that is what it is supposed to be (from 
+		// the javax.securtiy.SecretKey interface):
+		/* Keys that implement this interface return the string RAW as their encoding 
+		 * format (see getFormat), and return the raw key bytes as the result of a 
+		 * getEncoded method call. (The getFormat and getEncoded methods are inherited 
+		 * from the java.security.Key parent interface.) */
+		return "RAW";
+	}
+
+	@Override
+	public byte[] getEncoded() {
+		return (byte[])myKey.clone();
+	}
+
+}

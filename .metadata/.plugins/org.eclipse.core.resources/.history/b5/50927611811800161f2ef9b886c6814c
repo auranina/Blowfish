@@ -1,0 +1,7 @@
+package code.snippets.erica.blowfish;
+
+public interface Encryptable {
+
+	public boolean encrypt(String encryptedFileName);
+	
+}
