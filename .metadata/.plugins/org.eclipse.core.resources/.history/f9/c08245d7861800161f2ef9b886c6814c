@@ -7,7 +7,7 @@ import javax.crypto.SecretKey;
 
 public class HomeMadeKey implements KeySpec, SecretKey {
 
-//needed this?
+
 	private static final long serialVersionUID = 3481524322219986049L;
 	
 	private byte[] myKey; 

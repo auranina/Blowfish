@@ -1,0 +1,45 @@
+
+
+public class GenerateKey {
+	
+//	 	private byte[] Pcass;
+	
+	private byte[] Pclass = {(byte) 0x243f6a88, (byte) 0x85a308d3, (byte) 0x13198a2e, (byte) 0x03707344, (byte) 0xa4093822, (byte) 0x299f31d0,
+		(byte) 0x082efa98, (byte) 0xec4e6c89, (byte) 0x452821e6, (byte) 0x38d01377, (byte) 0xbe5466cf, (byte) 0x34e90c6c,
+		(byte) 0xc0ac29b7, (byte) 0xc97c50dd, (byte) 0x3f84d5b5, (byte) 0xb5470917, (byte) 0x9216d5d9, (byte) 0x8979fb1b};
+	
+	//private byte[][] SCass = new byte[4][256];
+	
+	
+			
+			
+			
+	}
+public GenerateKey(String key){
+	
+}
+
+public void setArrays(String password) {
+	// TODO Auto-generated method stub
+	
+}
+}
+//
+//
+//Initiaize first the P-array and then the four S-boxes, in order, with a fixed string.
+//This string consists of the hexadecima digits of pi (ess the initia 3): P1 =
+//0x243f6a88, P2 = 0x85a308d3, P3 = 0x13198a2e, P4 = 0x03707344, etc.
+//2. XOR P1 with the first 32 bits of the key, XOR P2 with the second 32-bits of the
+//key, and so on for a bits of the key (possiby up to P14). Repeatedy cyce
+//through the key bits unti the entire P-array has been XORed with key bits. (For
+//every short key, there is at east one equivaent onger key; for exampe, if A is a
+//64-bit key, then AA, AAA, etc., are equivaent keys.)
+//3. Encrypt the a-zero string with the Bowfish agorithm, using the subkeys
+//described in steps (1) and (2).
+//4. Repace P1 and P2 with the output of step (3).
+//5. Encrypt the output of step (3) using the Bowfish agorithm with the modified
+//subkeys.
+//6. Repace P3 and P4 with the output of step (5).
+//7. Continue the process, repacing a entries of the P array, and then a four S-boxes
+//in order, with the output of the continuousy changing Bowfish agorithm.
+//https://www.schneier.com/cryptography/bowfish/
