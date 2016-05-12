@@ -23,7 +23,6 @@ public class Decryptor implements Decryptable {
 		this.password = password;
 	}
 	
-	@SuppressWarnings("resource")
 	@Override
 	public String decript(String encryptedFileName) {
 		String encryptedContent = "EMPTY FILE!";
