@@ -28,6 +28,10 @@ public class HomeMadeKey implements KeySpec, SecretKey {
 	@Override
 	public String getFormat() {
 		// ???? No idea why this is "raw", but that is what it is supposed to be
+		/* Keys that implement this interface return the string RAW as their encoding 
+		 * format (see getFormat), and return the raw key bytes as the result of a 
+		 * getEncoded method call. (The getFormat and getEncoded methods are inherited 
+		 * from the java.security.Key parent interface.) */
 		return "RAW";
 	}
 
