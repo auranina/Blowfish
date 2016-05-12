@@ -10,7 +10,6 @@ public class HomeMadeKey implements KeySpec, SecretKey {
 
 	private static final long serialVersionUID = 3481524322219986049L;
 	
-
 	private byte[] myKey; 
 
 	private String algorithm;

@@ -57,7 +57,7 @@ public class Encryptor implements Encryptable {
 		} finally {
 			myPrinter.close();
 		}
-		System.out.println(encryptedString);
+		System.out.println("Encryption: " +encryptedString);
         
 		
 		return true;
